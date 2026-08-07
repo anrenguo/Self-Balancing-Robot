@@ -35,7 +35,7 @@ The program was made with assistance from Google's Gemini 3.1 Pro.
 ## Future Development
 *   **Custom PCB:** Migration from the current breadboard prototype to a dedicated printed circuit board to minimize wiring impedance and improve structural reliability.
 *   **Advanced Control:** Implementation of cascading PID loops for position and velocity control.
-*   **Hardware Upgrades** Utilizing stronger motors that generate more torque and achieve higher velocity, along with modern motor drivers utilizing MOSFET technology to reduce voltage drops.
+*   **Hardware Upgrades:** Utilizing stronger motors that generate more torque and achieve higher velocity, along with modern motor drivers utilizing MOSFET technology to reduce voltage drops.
 
 ## Author
 *   **Anren Guo**
