@@ -6,7 +6,7 @@
 This repository contains the hardware documentation, electrical schematics, and C-based control software for a custom-built, self-balancing robot. The system utilizes an Arduino Uno to read real-time orientation data via I2C from an MPU6050 IMU, processes the tilt angle, and actively maintains an upright position using a PID control loop.
 
 ## Live Demo
-https://github.com/user-attachments/assets/447d5da0-c147-499b-934d-776bdd1a3580
+https://github.com/user-attachments/assets/7b5526c6-c11d-4ea7-9ab6-fbfd53dee1e7
 
 ## Hardware Architecture
 The physical chassis is custom-cut from a 5mm PVC board to ensure a rigid chassis. The battery pack and hardware components were thoughtfully placed to ensure a centre of gravity near the centre of the body. The design was inspired by Rachel De Barros's YouTube tutorial: https://www.youtube.com/watch?v=eud5v0AUQew
