@@ -11,8 +11,8 @@ https://github.com/user-attachments/assets/447d5da0-c147-499b-934d-776bdd1a3580
 ## Hardware Architecture
 The physical chassis is custom-cut from a 5mm PVC board to ensure a rigid chassis. The battery pack and hardware components were thoughtfully placed to ensure a centre of gravity near the centre of the body. The design was inspired by Rachel De Barros's YouTube tutorial: https://www.youtube.com/watch?v=eud5v0AUQew
 
-*   **Wiring Schematic:** https://github.com/anrenguo/Self-Balancing-Robot/blob/main/hardware/wiring_schematic.png
-*   **Bill of Materials:** https://github.com/anrenguo/Self-Balancing-Robot/blob/main/hardware/component_list.md
+* **Wiring Schematic:** [View Schematic](./hardware/wiring_schematic.png)
+* **Bill of Materials:** [View Component List](./hardware/component_list.md)
 
 Power is supplied by a 7.4V series 18650 lithium-ion pack, which is distributed between the L298N motor driver and the logic board to ensure stable voltage levels during high-torque balancing corrections.
 
