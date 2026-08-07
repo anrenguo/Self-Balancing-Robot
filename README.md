@@ -1,12 +1,12 @@
 # Self-Balancing Robot
 
-![Fully Assembled Robot](./media/main_view.png)
+<img src="./media/main_view.png" alt="Fully Assembled Robot" width="400">
 
 ## Overview
 This repository contains the hardware documentation, electrical schematics, and C-based control software for a custom-built, self-balancing robot. The system utilizes an Arduino Uno to read real-time orientation data via I2C from an MPU6050 IMU, processes the tilt angle, and actively maintains an upright position using a PID control loop.
 
 ## Live Demo
-<video src="./media/demo.mp4" controls="controls" width="100%">
+<video src="https://github.com/anrenguo/Self-Balancing-Robot/raw/main/media/demo.mp4" controls="controls" width="100%">
 </video>
 
 ## Hardware Architecture
