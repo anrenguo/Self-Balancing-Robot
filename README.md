@@ -16,6 +16,8 @@ The physical chassis is custom-cut from a 5mm PVC board to ensure a rigid chassi
 
 Power is supplied by a 7.4V series 18650 lithium-ion pack, which is distributed between the L298N motor driver and the logic board to ensure stable voltage levels during high-torque balancing corrections.
 
+Please see the photos in `/media` for details.
+
 ## Software & Control Theory
 The balancing logic relies on continuous sensor polling and a custom-written PID controller designed to actively compensate for the physical kinematics of the hardware. 
 
