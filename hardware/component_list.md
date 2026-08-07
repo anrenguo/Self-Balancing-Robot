@@ -12,5 +12,5 @@
 | **Power Distribution** | Wago 221-413 Splicing Connectors | 2 | Splits the 7.4V battery rail to the L298N and Arduino. |
 | **Logic Power Adapter** | 5.5mm x 2.1mm DC Barrel Jack | 1 | Routes the split 7.4V power cleanly into the Arduino. |
 | **Tuning Interface** | 10kΩ Rotary Potentiometer | 1 | Analog input for real-time, on-the-fly tuning of the angular setpoint. |
-| **Prototyping** | 170-Tie Point Breadboard | 1 | Enables wiring of the MPU6050 and Potentiometer. |
+| **Breadboard** | 170-Tie Point Breadboard | 1 | Enables wiring of the MPU6050 and Potentiometer. |
 | **Chassis** | 5mm PVC Board / Custom Cut | 1 | Rigid structural base for mounting components. Custom cut using utility knife and assembled with hot glue. |
