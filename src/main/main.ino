@@ -210,7 +210,7 @@ void driveMotors(double pidOut) {
   // --- ACTUATOR SATURATION KILL SWITCH ---
   // If the pitch exceeds 40 degrees, the required recovery velocity exceeds the physical RPM 
   // limit of the motors. Cut power entirely to prevent the robot from accelerating the fall.
-  if (abs(pitch - setpoint) > 40) {
+  if (abs(pitch - setpoint) > 30) {
     speedLeft = 0;
     speedRight = 0;
   }
