@@ -107,16 +107,19 @@ void setup() {
   filtered_ax = temp_ax;
   filtered_az = temp_az;
 
+  // Starting tilt from the accelerometer alone (same formula as in loop())
+  float startAngle = atan2(filtered_ax, filtered_az) * 180 / PI;
+
   // --- STARTUP KINEMATIC SANITY CHECK ---
   // Prevents the motors from spooling up to 100% PWM if the robot is initialized lying flat.
-  if (abs(setpoint) > 45) {
+  if (fabs(startAngle) > 45) {
     Serial.println("SYSTEM HALTED: Robot is not upright. Prop it up and press reset.");
     while (1) {
       // Processor trapped securely to prevent phantom driving
     } 
   }
   
-  pitch = setpoint; 
+  pitch = startAngle;
   timer = micros();
 }
 
@@ -208,7 +211,7 @@ void driveMotors(double pidOut) {
   }
   
   // --- ACTUATOR SATURATION KILL SWITCH ---
-  // If the pitch exceeds 40 degrees, the required recovery velocity exceeds the physical RPM 
+  // If the pitch exceeds 30 degrees, the required recovery velocity exceeds the physical RPM 
   // limit of the motors. Cut power entirely to prevent the robot from accelerating the fall.
   if (abs(pitch - setpoint) > 30) {
     speedLeft = 0;
