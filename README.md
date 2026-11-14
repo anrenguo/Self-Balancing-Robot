@@ -3,7 +3,7 @@
 <img src="./media/main_view.png" alt="Fully Assembled Robot" width="400">
 
 ## Overview
-This repository contains the hardware documentation, electrical schematics, and C-based control software for a custom-built, self-balancing robot. The system utilizes an Arduino Uno to read real-time orientation data via I2C from an MPU6050 IMU, processes the tilt angle, and actively maintains an upright position using a PID control loop.
+This repository contains the hardware documentation, electrical schematics, and C++ (Arduino) control software for a custom-built, self-balancing robot. The system utilizes an Arduino Uno to read real-time orientation data via I2C from an MPU6050 IMU, processes the tilt angle, and actively maintains an upright position using a PID control loop.
 
 ## Live Demo
 https://github.com/user-attachments/assets/7b5526c6-c11d-4ea7-9ab6-fbfd53dee1e7
@@ -27,17 +27,23 @@ The balancing logic relies on continuous sensor polling and a custom-written PID
 *   **Kinematic Mitigation:** A decoupled deadband PWM injection is utilized to overcome the static gearbox friction of the TT motors and baseline L298N voltage sag. This ensures that the mathematical PID output translates immediately into physical torque.
 *   **Actuator Saturation Kill Switch:** If the chassis exceeds a 30-degree tilt, the required recovery velocity exceeds the physical RPM limit of the motors. The software instantly cuts power to prevent the robot from accelerating its own fall.
 
+### Tuning
+The PID gains (Kp = 40, Ki = 4, Kd = 2.5) were tuned by hand on the robot: Kp and Kd first, then Ki. The two TT motors responded unevenly at low PWM and need roughly 70/255 to overcome static friction, so a 70 PWM minimum-drive offset is added to every nonzero motor command.
+
 The program was made with assistance from Google's Gemini 3.1 Pro.
 
 ### Getting Started
 1. Cut and glue the physical robot chassis together using the 5mm PVC boards.
 2. Attach the hardware components using hot glue. Complete all wiring as per the schematic.
 3. Find the natural point of balance of the robot using your hands, then rest the robot at this angle against a steady wall.
-4. At the angle established in step 3, run the calibration sketch located in `/utils/MPU_Calibration` to generate the specific hardware offsets for your IMU.
-5. Update the offset variables in the main program (`/src/main.ino`).
+4. At the angle established in step 3, run the calibration sketch located in `/utils/mpu_calibration` to generate the specific hardware offsets for your IMU.
+5. Update the offset variables in the main program (`/src/main/main.ino`).
 6. Upload the main program to the Arduino Uno.
 7. Double-check the wiring, then activate the batteries. The robot should promptly begin to self-balance!
 8. You will very likely need to tune the PID constants yourself depending on the assembly of your robot.
+
+## Performance & Known Limitations
+In a typical run the robot balances unassisted for about 20 seconds. The controller only regulates tilt angle; with no wheel-speed feedback, the robot gradually drifts in one direction (sometimes into walls) until the TT motors can no longer supply enough torque to recover. The cascaded position/velocity loop and stronger motors listed below are aimed at this.
 
 ## Future Development
 *   **Custom PCB:** Migration from the current breadboard prototype to a dedicated printed circuit board to minimize wiring impedance and improve structural reliability.
