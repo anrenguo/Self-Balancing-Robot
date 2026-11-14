@@ -43,7 +43,7 @@ The program was made with assistance from Google's Gemini 3.1 Pro.
 8. You will very likely need to tune the PID constants yourself depending on the assembly of your robot.
 
 ## Performance & Known Limitations
-In a typical run the robot balances unassisted for about 20 seconds. The controller only regulates tilt angle; with no wheel-speed feedback, the robot gradually drifts in one direction (sometimes into walls) until the TT motors can no longer supply enough torque to recover. The cascaded position/velocity loop and stronger motors listed below are aimed at this.
+In a typical run the robot balances unassisted for about 20 seconds. The controller only regulates tilt angle; with no wheel-speed feedback (no sensors were available in the design), the robot gradually drifts in one direction (sometimes into walls) until the TT motors can no longer supply enough torque to recover. The cascaded position/velocity loop and stronger motors listed below are aimed at this.
 
 ## Future Development
 *   **Custom PCB:** Migration from the current breadboard prototype to a dedicated printed circuit board to minimize wiring impedance and improve structural reliability.
